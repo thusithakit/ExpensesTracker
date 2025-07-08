@@ -1,0 +1,27 @@
+﻿@model ExpensesTracker.Models.Expense
+
+<div class="container">
+    <h2>Add Expense</h2>
+    <form asp-action="Edit" method="post">
+        <div>
+            <label asp-for="Description" class="form-label"></label>
+            <input asp-for="Description" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="Amount" class="form-label"></label>
+            <input type="number" min="0" asp-for="Amount" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="Category" class="form-label"></label>
+            <select asp-for="Category" class="form-select">
+                <option value="" disabled>Select Category</option>
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Utilities">Utilities</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Edit Expense</button>
+    </form>
+</div>
